@@ -3,6 +3,7 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 const { connect } = require('mongoose');
 const authRoutes = require('./routes/authRoute');
+const musicRoutes = require('./routes/musicRoute');
 const app = express();
 
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes)
+app.use('./api/music', musicRoutes)
 
 app.get('/', (req, res) => {
     res.end("Hello from sever");

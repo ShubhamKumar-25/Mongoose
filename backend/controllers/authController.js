@@ -69,7 +69,7 @@ async function loginUser(req, res){
 
     if(!isPasswordValid){
         return res.status(401).json({
-            message: "Invalid credentials";
+            message: "Invalid credentials"
         })
     }
 
@@ -93,4 +93,4 @@ async function loginUser(req, res){
 };
 
 
-module.exports = { register };
+module.exports = { register, loginUser };
